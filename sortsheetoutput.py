@@ -8,5 +8,7 @@ with open ("file.csv","r") as file:
          counts[favorite] += 1
       else:
          counts[favorite] = 1
-for favorite in sorted(counts , reverse =True):
+def get_value(segment):
+   return counts[segment]
+for favorite in sorted(counts ,key =get_value, reverse =True):
    print(f"{favorite}:{counts[favorite]}")
